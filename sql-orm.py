@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker
 
 #executing the instructions from localhost "chinook" db
 db = create_engine("postgresql:///chinook")
-base = declarative_base()
+#base = declarative_base()
 
 #create a class-based model for the "Artist" table
 class Artist(base):
@@ -67,7 +67,7 @@ base.metadata.create_all(db)
 #    print(album.AlbumId, album.Title, album.ArtistId, sep=" | ")
 
 #Query 6 - select all tracks where the "Composer" is "Queen" from the "Track" table
-tracks = session.query(Track).filter_by(Composer="Queen")
+#tracks = session.query(Track).filter_by(Composer="Queen")
 for track in tracks:
     print(
         track.TrackId, 
